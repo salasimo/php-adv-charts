@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #232528;
+}
+
+.container {
+    width: clamp(400px, 80%, 1000px); //CLAMP() molto interessante ma non compatibile con Safari
+    -webkit-max-width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #eaf6ff;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 10px 12px -6px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 10px 12px -6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 12px -6px rgba(0, 0, 0, 0.2);
+}
