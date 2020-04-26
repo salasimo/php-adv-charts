@@ -11,6 +11,18 @@
 </head>
 
 <body>
+    <?php
+    $access = $_GET["access"];
+    if ($access == "guest") {
+        $access = 0;
+    } elseif ($access == "employee") {
+        $access = 1;
+    } elseif ($access == "clevel") {
+        $access = 2;
+    } else {
+        $access = -1;
+    }
+    ?>
     <div class="dashboard-container">
         <div class="container">
             <canvas id="first-chart"></canvas>
@@ -18,9 +30,17 @@
 
         <div class="container">
             <canvas id="second-chart"></canvas>
+            <p class="info-accesso-employee">Dati non visualizzabili con questo livello di accesso.</p>
+        </div>
+        <div class="container">
+            <canvas id="third-chart"></canvas>
+            <p class="info-accesso-clevel">Dati non visualizzabili con questo livello di accesso.</p>
         </div>
     </div>
     <script src="js/main.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var access = <?php echo $access; ?>
+    </script>
 </body>
 
 </html>
